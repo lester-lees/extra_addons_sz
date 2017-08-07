@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record id="action_show_delivery_server" model="ir.actions.server">
+			<field name="name">show_delivery_server</field>
+			<field name="model_id" ref="model_stock_picking"/>
+			<field name="state">code</field>
+			<field name="condition">True</field>
+			<field name="type">ir.actions.server</field>
+			<field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+			<field name="res_model">stock.picking</field>
+			<field name="code">
+				action = self.show_so_delivery(cr, uid, 0, context=context)
+			</field>
+		</record>	
+
+		<record id="action_show_delivery_done_server2" model="ir.actions.server">
+			<field name="name">show_delivery_done_server</field>
+			<field name="model_id" ref="model_stock_picking"/>
+			<field name="state">code</field>
+			<field name="condition">True</field>
+			<field name="type">ir.actions.server</field>
+			<field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+			<field name="res_model">stock.picking</field>
+			<field name="code">
+				action = self.show_so_delivery(cr, uid, 1, context=context)
+			</field>
+		</record>	
+		<record id="action_show_delivery_unchecked_server" model="ir.actions.server">
+			<field name="name">show_delivery_unchecked_server</field>
+			<field name="model_id" ref="model_stock_picking"/>
+			<field name="state">code</field>
+			<field name="condition">True</field>
+			<field name="type">ir.actions.server</field>
+			<field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+			<field name="res_model">stock.picking</field>
+			<field name="code">
+				action = self.show_account_delivery(cr, uid, 0, context=context)
+			</field>
+		</record>
+		
+		<record id="action_show_delivery_checked_server" model="ir.actions.server">
+			<field name="name">show_delivery_checked_server</field>
+			<field name="model_id" ref="model_stock_picking"/>
+			<field name="state">code</field>
+			<field name="condition">True</field>
+			<field name="type">ir.actions.server</field>
+			<field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+			<field name="res_model">stock.picking</field>
+			<field name="code">
+				action = self.show_account_delivery(cr, uid, 1, context=context)
+			</field>
+		</record>		
+		
+        <!--		
+		<record id="view_picking_add_emily_check" model="ir.ui.view">
+            <field name="name">stock.picking.add_dest</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='action_assign']" position='before'> 
+					<field name="is_checked" invisible="1"/>
+					<button name="emily_check" type="object" string="Emily Check" attrs="{'invisible':['|',('is_checked', '=', True),('state','!=','done')]}" groups="account.group_account_manager" class="oe_highlight"/>
+					<button name="emily_check" type="object" string="UnCheck" attrs="{'invisible':['|',('is_checked', '=', False),('state','!=','done')]}" groups="account.group_account_manager"/>					
+				</xpath>				
+           </field>	
+        </record>		
+		-->   
+		
+	</data>
+</openerp>

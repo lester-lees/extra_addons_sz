@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="to_affiliate_view_res_company_form">
+			<field name="name">to.affiliate.view.res.company.form</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form" />
+			<field name="arch" type="xml">
+				<field name="parent_id" position="after">
+					<field name="aff_allowed" />
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

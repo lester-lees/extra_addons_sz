@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="product_product_report_yesterday">
+            <t t-call="report.html_container">
+					<div class="page">
+						<h3> 动态库存 - 昨日差异 Report  </h3>	
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th width="40%"><strong>品名</strong></th>
+									<th width="10%"><strong>成品库存</strong></th>									
+									<th width="10%"><strong>昨日入库</strong></th>
+									<th width="10%"><strong>昨日出库</strong></th>
+									<th width="10%"><strong>本日入库</strong></th>
+									<th width="10%"><strong>本日出库</strong></th>									
+									<th width="10%"><strong>不良品</strong></th>
+									<th width="10%"><strong>待用仓</strong></th>								
+								</tr>
+							</thead>
+						  <tbody>	
+								<t t-foreach="docs" t-as="o">
+									<tr>
+										<td><span t-field="o.name"/></td>
+										<td><span t-field="o.qty_available"/></td>									
+										<td><span t-field="o.yesterday_in_qty"/></td>
+										<td><span t-field="o.yesterday_out_qty"/></td>
+										<td><span t-field="o.day_in_qty"/></td>
+										<td><span t-field="o.day_out_qty"/></td>										
+										<td><span t-field="o.deficient_qty"/></td>
+										<td><span t-field="o.standby_qty"/></td>									
+									</tr>
+								</t>
+							</tbody>
+						</table>						
+					</div>
+             </t>
+        </template>
+
+		<report 
+		string="Stock Moves Yesterday" 
+		id="action_product_product_report_yesterday" 
+		model="product.product" 
+		report_type="qweb-pdf"
+		name="warehouse_loewie_sz.product_product_report_yesterday" 
+		file="warehouse_loewie_sz.product_product_report_yesterday"/>
+		
+	</data>
+</openerp>

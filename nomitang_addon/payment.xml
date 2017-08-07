@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="transaction_form_nt" model="ir.ui.view">
+            <field name="name">transaction.form.nt</field>
+            <field name="model">payment.transaction</field>
+            <field name="inherit_id" ref="payment.transaction_form"/>
+            <field name="arch" type="xml">
+                <field name='state' position='before'>
+					<button name="create_hkerp_salesorder" type='object' string='Create HKERP Salesorder'/>
+                </field> 
+            </field>
+        </record>
+		
+		<record model="ir.ui.view" id="res_lang_flag_form">
+			<field name="name">res.lang.flag.form</field>
+			<field name="model">res.lang</field>
+			<field name="inherit_id" ref="base.res_lang_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="before">
+					<field name="flag_image" widget='image' ></field>
+				</xpath>
+			</field>
+		</record>	
+    </data>
+</openerp>

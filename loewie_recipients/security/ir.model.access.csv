@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loewie_recipients_stock_user,loewie_recipients,model_loewie_recipients,stock.group_stock_user,1,1,1,1
+access_loewie_shipping_label_stock_user,loewie_shipping_label,model_loewie_shipping_label,stock.group_stock_user,1,1,1,1

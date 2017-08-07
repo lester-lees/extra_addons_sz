@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="nt_offlinestore_website_view" name="Offlinestore Website View">
+	<t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+			<section>
+				<div class="container">				
+				
+					<t  t-foreach="stores" t-as="store">	
+
+							  <h1 style="font-weight:bold; color:rgb(163,0,70); width:728px; max-width:100%; line-height:16.9px;"><t t-esc="store.country.name"/></h1><br/>
+							  <h4 style="color:rgb(51,51,51); max-width:100%; line-height:16.9px;"><t t-esc="store.name"/></h4>
+							  <p style="max-width: 100%; color: rgb(50, 47, 47);">
+								<!-- t t-if="store.image"><img t-att-src="website.image_url(store, 'image')" border="0" style=""/><br/></t -->
+								<t t-if="store.img_src"><img t-att-src="store.img_src" border="0" style=""/><br/></t>				
+								<t t-if="store.tel1">Phone: <a t-att-href="'tel:%s' % store.tel1"><t t-esc="store.tel1"/></a><br/></t>	
+								<t t-if="store.tel2">Tel: <a t-att-href="'tel:%s' % store.tel2"><t t-esc="store.tel2"/></a><br/></t>					
+								<t t-if="store.email1">E-mail: <a t-att-href="'mailto:%s' % store.email1"><t t-esc="store.email1"/></a><br/></t>					
+								Website: <a t-att-href="store.website1" target="_blank" style="color: rgb(19, 92, 174)"><t t-esc="store.website1"/></a><br/>
+								<t t-if="store.website2">Website: <a t-att-href="store.website2" target="_blank" style="color: rgb(19, 92, 174)"><t t-esc="store.website2"/></a><br/></t>
+								<t t-if="store.address">Address: <span t-field="store.address"/></t>						
+							  </p><br/>			  
+					</t>
+				</div>
+			</section>
+		</div>
+	</t>
+    </template>
+
+</data>
+</openerp>

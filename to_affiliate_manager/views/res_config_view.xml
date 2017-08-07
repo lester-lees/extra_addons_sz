@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<record id="view_to_affiliate_configuration" model="ir.ui.view">
+            <field name="name">affiliate settings</field>
+            <field name="model">to.affiliate.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Affiliate" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <separator string="Affiliate Management"/>
+                    <group name="general_grp">
+                    	<label for="general" string="General"/>
+                    	<div name="general">
+                    		<div name="to_affiliate_general">
+                    			<label for="comm_percent"/>
+                    			<field name="comm_percent" class="oe_inline"/> (%%)
+                    			<field name="company_id" invisible="1"/>                                
+                    		</div>
+                    		<div>
+                    			<label for="cookie_age"/>
+                    			<field name="cookie_age" class="oe_inline"/> (seconds)                                
+                    		</div>
+                    		<div>
+                    			<label for="payout"/>
+                    			<field name="payout" class="oe_inline"/>                                
+                    		</div>
+                    		<div>
+                    			<label for="affcode_company"/>
+                    			<field name="affcode_company" class="oe_inline"/>                                
+                    		</div>
+                    	</div>
+                    </group>
+                    <group name="accounting_grp">
+                    	<label for="accounting" string="Accounting"/>
+                    	<div name="accounting">
+                    		<div name="to_affiliate_accounting">
+                    			<label for="com_product_id"/>
+                    			<field name="com_product_id" class="oe_inline"/>
+                    		</div>
+                    	</div>
+                    </group>
+                </form>
+            </field>
+         </record>
+         
+         <record id="action_to_affiliate_configuration" model="ir.actions.act_window">
+            <field name="name">Configure Affiliate</field>
+            <field name="res_model">to.affiliate.config.settings</field>
+            <field name="view_id" ref="view_to_affiliate_configuration"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+        
+        <menuitem id="menu_affiliate_configuration" name="Settings" parent="menu_to_affiliate_config"
+            sequence="0" action="action_to_affiliate_configuration" groups="group_to_affiliate_manager"/>
+    
+    </data>
+</openerp>

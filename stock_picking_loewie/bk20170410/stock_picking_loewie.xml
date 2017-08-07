@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="stock_picking_loewie">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="stock_picking_loewie.external_layout_stock">
+                        <div class="page">
+							<t t-if="o.picking_type_id.code != 'incoming'"><h3>Picking List : <span t-field="o.name"/> </h3></t>
+							<t t-if="o.picking_type_id.code == 'incoming'"><h3>Goods Received Note(GRN) : <span t-field="o.name"/> </h3></t>
+							<t t-if="o.sale_id"><h4>Invoice: <span t-field="o.partner_id.ref"/><t t-if="not o.partner_id.ref"><span t-field="o.partner_id.parent_id.ref"/></t>-<span t-field="o.sale_id.name"/></h4></t>
+							<t t-if="not o.sale_id"><h4>Source : <span t-field="o.origin"/></h4></t>
+							<t t-if="o.so_reference"><h4>Reference : <span t-field="o.so_reference"/></h4></t>
+						
+						
+							<table  class="dest_address" style="table-layout:fixed; width: 100%">			
+								<tr><td width="12%"><strong>Create Date: </strong></td><td><span t-field="o.create_date"/></td></tr>
+								<tr t-if="o.partner_id.parent_id"><td width="12%"><strong>Company: </strong></td><td><span t-field="o.partner_id.parent_id"/></td></tr>
+								<tr><td width="12%"><strong>Consignee: </strong></td><td><span t-field="o.partner_id.name"/>
+								<t t-if="o.partner_id.function">, <span t-field="o.partner_id.function"/></t></td>
+								</tr>
+								
+								<tr><td width="12%"><strong>Address: </strong> </td>
+								<td><span t-field="o.partner_id.street"/>,<t t-if="not o.partner_id.street"><span t-field="o.partner_id.parent_id.street"/>,<span t-field="o.partner_id.parent_id.street2"/></t>
+								<span t-field="o.partner_id.street2"/>
+								<t t-if="o.partner_id.zip"><strong>Zip:<span t-field="o.partner_id.zip"/></strong></t>
+								</td>
+								</tr>
+								
+								<tr><td width="12%"></td>
+									<td>
+										<span t-field="o.partner_id.city"/> 
+										<t t-if="not o.partner_id.city"><span t-field="o.partner_id.parent_id.city"/>,</t> 
+										
+										<span t-field="o.partner_id.country_id.name"/>
+										<t t-if="not o.partner_id.country_id.name"><span t-field="o.partner_id.parent_id.country_id.name"/></t>
+									</td>
+								</tr>
+								
+								<tr t-if="o.partner_id.phone or o.partner_id.parent_id.phone"><td width="12%"><strong>Phone:</strong> </td>
+								<td><span t-field="o.partner_id.phone"/>
+								<t t-if="not o.partner_id.phone"><span t-field="o.partner_id.parent_id.phone"/></t></td>
+								</tr>
+								
+								<tr t-if="o.partner_id.mobile or o.partner_id.parent_id.mobile"><td width="12%"><strong>Mobile:</strong> </td>
+								<td><span t-field="o.partner_id.mobile"/>
+								<t t-if="not o.partner_id.mobile"><span t-field="o.partner_id.parent_id.mobile"/></t></td>
+								</tr>
+								
+								<tr t-if="o.note or o.sale_id.note"><td width="12%"><strong>销售人员备注:</strong></td><td><t t-if="o.note"><span t-field="o.note"/><br/></t><span t-field="o.sale_id.note"/></td></tr>
+							</table>
+						
+							 
+							 
+								<br/>
+								<t t-set="p_qty" t-value="0"/>		
+								<t t-set="p_reserved" t-value="0"/>
+								<t t-if="o.move_lines">
+								
+									<t t-foreach="group_mv_lines(o.move_lines).items()" t-as="brand">
+									    <t t-if="brand[1]['type']!='Sample'">
+											<table class="table table-condensed">
+											  <thead>
+												<tr>
+													<th width="5%"><strong>Pos</strong></th>
+													<th width="35%"><strong>Product</strong></th>
+													<th width="35%"><strong>Description</strong></th>									
+													<th width="5%"><strong>From</strong></th>
+													<th width="5%"><strong>To</strong></th>
+													<th width="10%"><strong>Ean13</strong></th>
+													<th width="5%" class="text-right"><strong>Qty</strong></th>
+												</tr>
+											  </thead>
+											  <tbody>	
+												<tr t-foreach="brand[1]['lines']" t-as="pack_operation">
+													<td width="5%"><t t-esc="pack_operation['id']"/></td>
+													<t t-set="p_qty" t-value="p_qty + pack_operation['qty']"/>
+													<t t-set="p_reserved" t-value="p_reserved + pack_operation['availability']"/>												
+													<td width="35%"><span t-esc="pack_operation['product_name']"/></td>
+													<td width="35%"><span t-esc="pack_operation['description']"/></td>											
+													<td width="5%"><span t-esc="pack_operation['loc_src']"/></td>											
+													<td width="5%"><span t-esc="pack_operation['loc_dest']"/></td>
+													<td width="10%"><span t-esc="pack_operation['internal_reference']"/></td>
+													<td width="5%" class="text-right"><span t-esc="int(pack_operation['qty'])"/></td>
+												</tr>
+											  </tbody>
+											</table>
+										</t>
+									</t>								
+								
+									<t t-foreach="group_mv_lines(o.move_lines).items()" t-as="brand">
+									    <t t-if="brand[1]['type']=='Sample'">
+											<h4 ><t t-esc="brand[1]['type']"/></h4>
+											<table class="table table-condensed">
+											  <thead>
+												<tr>
+													<th width="5%"><strong>Pos</strong></th>
+													<th width="35%"><strong>Product</strong></th>
+													<th width="35%"><strong>Description</strong></th>									
+													<th width="5%"><strong>From</strong></th>
+													<th width="5%"><strong>To</strong></th>
+													<th width="10%"><strong>Ean13</strong></th>
+													<th width="5%" class="text-right"><strong>Qty</strong></th>
+												</tr>
+											  </thead>
+											  <tbody>	
+												<tr t-foreach="brand[1]['lines']" t-as="pack_operation">
+													<td width="5%"><t t-esc="pack_operation['id']"/></td>
+													<t t-set="p_qty" t-value="p_qty + pack_operation['qty']"/>
+													<t t-set="p_reserved" t-value="p_reserved + pack_operation['availability']"/>												
+													<td width="35%"><span t-esc="pack_operation['product_name']"/></td>
+													<td width="35%"><span t-esc="pack_operation['description']"/></td>											
+													<td width="5%"><span t-esc="pack_operation['loc_src']"/></td>											
+													<td width="5%"><span t-esc="pack_operation['loc_dest']"/></td>
+													<td width="10%"><span t-esc="pack_operation['internal_reference']"/></td>
+													<td width="5%" class="text-right"><span t-esc="int(pack_operation['qty'])"/></td>
+												</tr>
+											  </tbody>
+											</table>
+										</t>
+									</t>
+								</t>						
+							<br/><strong>Qty Total: <t t-esc="int(p_qty)"/></strong><br/>
+							<strong>制单人：<t t-if="o.sale_id"><span t-field="o.sale_id.user_id"/></t><t t-if="not o.sale_id"><span t-field="o.create_uid"/></t></strong><br/>
+                        </div>
+                    </t>
+                 </t>
+             </t>
+        </template>
+
+		<report 
+		string="拣货单-正常销售发货" 
+		id="action_report_picking" 
+		model="stock.picking" 
+		report_type="qweb-pdf"
+		name="stock_picking_loewie.stock_picking_loewie" 
+		file="stock_picking_loewie.stock_picking_loewie"/>
+		
+	</data>
+</openerp>

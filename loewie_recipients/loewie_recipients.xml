@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>		
+		<record id="view_picking_recipients" model="ir.ui.view">
+            <field name="name">stock.picking.recipients</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook" position='inside'>                         
+					<page string="Recipients">
+						<field name="recipient_ids" domain="[('picking_id', '=', active_id)]" context="{'default_picking_id': active_id, 'default_sale_id': sale_id}">
+							<tree string="Recipients" editable="bottom">
+								<field name="sale_id" readonly="1"/>							
+								<field name="picking_id" readonly="1"/>
+								<field name="name"/>
+								<field name="cellphone"/>
+								<field name="address"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>				
+           </field>
+        </record>	
+
+		<record id="view_stock_move_add_recipients" model="ir.ui.view">
+            <field name="name">view stock move add_recipients</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='product_id']" position='after'>                        
+                    <field name="recipient_id" domain="[('picking_id', '=', parent.id)]"/>
+				</xpath>		
+           </field>
+        </record>	
+		
+		
+		<record id="view_order_form_recipients" model="ir.ui.view">
+            <field name="name">sale.order.recipients</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+				
+                <xpath expr="/form/sheet/notebook" position='inside'>                         
+					<page string="Recipients">
+						<field name="recipient_ids" domain="[('sale_id', '=', active_id)]" context="{'default_sale_id': active_id}">
+							<tree string="Recipients" editable="bottom">
+								<field name="sale_id" readonly="1"/>						
+								<field name="picking_id" readonly="1"/>
+								<field name="name"/>
+								<field name="cellphone"/>
+								<field name="address"/>
+							</tree>
+						</field>
+					</page>
+				</xpath>
+				
+                <xpath expr="//tree[@string='Sales Order Lines']/field[@name='name']" position='after'>
+					<field name="recipient_id" domain="[('sale_id', '=', parent.id)]"/>
+                </xpath>				
+				
+				<xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+					<button name="duplicate_sale_order_line" type="object" string="Duplicate Line" states="draft" icon="terp-gtk-jump-to-ltr"/>
+				</xpath>				
+				
+            </field>
+        </record>	
+		
+	
+        <record id="view_loewie_shipping_label_tree" model="ir.ui.view">
+            <field name="name">loewie.shipping_label.tree</field>
+            <field name="model">loewie.shipping.label</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Loewie production">
+                    <field name="name"/>                    
+					<field name="field"/> 
+                    <field name="left"/>
+                    <field name="top"/>					
+                    <field name="right"/>
+                    <field name="bottom"/>
+                </tree>
+            </field>
+        </record>		
+		
+        <record id="action_loewie_shipping_label" model="ir.actions.act_window">
+            <field name="name">loewie shipping label</field>
+            <field name="res_model">loewie.shipping.label</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to view shipping_label.
+              </p><p>
+                view shipping_label.
+              </p>
+            </field>
+        </record>
+        <menuitem name="Shipping Label" action="action_loewie_shipping_label" id="menu_shipping_label"  parent="stock.menu_stock_configuration" sequence="90"/>		
+		
+		
+		
+	</data>
+</openerp>

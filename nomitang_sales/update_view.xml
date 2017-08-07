@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_so_add_country" model="ir.ui.view">
+            <field name="name">sale order add country </field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='partner_id']" position='before'>               
+					<field name="country_id"/>
+				</xpath>		
+                <xpath expr="//tree/field[@name='amount_total']" position='after'>               
+					<field name="currency_id"/>
+				</xpath>						
+           </field>
+        </record>	
+	
+    </data>
+</openerp>

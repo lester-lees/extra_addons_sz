@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template id="categories_recur" name="NT Category list">
+  <li t-att-class="'active' if c.id == (category and category.id or 0) else ''">
+      <t t-if="c.child_id">
+		<i class="text-primary fa fa-chevron-right"></i>
+	  </t>
+      <a t-att-href="keep('/downloads/category/' + slug(c), category=0)" t-field="c.name"></a>
+      <ul t-if="c.child_id and c.id in parent_category_ids" class="nav nav-pills nav-stacked nav-hierarchy" style="border-bottom-style:none;">  
+          <t t-foreach="c.child_id" t-as="c">
+              <t t-call="nomitang_download.categories_recur"/>
+          </t>
+      </ul>
+      <ul t-if="c.child_id and c.id not in parent_category_ids" class="nav nav-pills nav-stacked nav-hierarchy" style="border-bottom-style:none;display:none">  
+          <t t-foreach="c.child_id" t-as="c">
+              <t t-call="nomitang_download.categories_recur"/>
+          </t>
+      </ul>	  
+  </li>
+</template>
+
+<template id="download_left_col" name="download left column">
+	<!-- div class="left-title">
+		<h3></h3>
+	</div -->
+	<div>
+	<ul class="nav nav-pills nav-stacked mt16 category_nav mb16" id="o_shop_collapse_category" style="border-color:#ffffff;font-size:18px;">
+		<!-- li t-att-class=" '' if category else 'active' ">
+			<a href="/downloads">All Downloads</a>
+		</li -->
+		<t t-as="c" t-foreach="categories">
+			<t t-call="nomitang_download.categories_recur"/>
+		</t>
+	</ul>	
+	</div>
+</template>
+
+<template id="download_search" name="download search">
+<style>
+a {
+text-decoration: none;
+color: #000;
+}
+a:hover {
+text-decoration: none;
+color: #000;
+}
+</style>
+
+	<div class="row" style="height:35px;"></div>
+	<div class="row" style="margin-bottom:15px;">		  
+		<div class="col-md-4 col-sm-5 col-xs-3"></div>		  
+		<div class="input-group col-md-5 col-sm-6 col-xs-8">
+			<div class="oe_search">
+			<form t-att-action="keep('/downloads'+ ('/category/'+slug(category)) if category else '', search=0)" method="get" t-att-class="search_class">				
+				<input type="text" name="search" class="search-query form-control oe_search_box" placeholder="Search..." t-att-value="search" style="border-radius:5px;width:60%;"/>
+				<span class="fa fa-remove fa-lg oe_search_clear"/>				
+				<span class="input-group-btn">
+				   <button type="submit" class="btn btn-default oe_search_button" style="margin-left:15px;border-radius:5px;background-color:#a30046;color:#ffffff;">SEARCH</button>
+				</span>
+			</form>
+			</div>
+		</div>		 
+	</div>
+</template>
+<!--   height:60px;  -->
+<template id="downloads_tmpl">
+  <t t-call="website.layout">
+      <div id="wrap">	  
+           <div class="container mb16">     
+	          <div class="row">
+				<t t-call="nomitang_download.download_search"/>		
+				<div class="col-md-3 col-sm-4 hidden-xs">
+					<t t-call="nomitang_download.download_left_col"/>
+				</div>
+
+				<div id="products_grid" class="col-md-9 col-sm-8">
+				    <t t-if="len(downloads)==0">
+					<div style="text-align:center;color:#a30046;margin-top:50px;font-size:28px;"><strong>No Result !</strong></div>
+					</t>
+					<t t-as="download" t-foreach="downloads">
+						<t t-if="download">
+							<div class="col-md-4 col-sm-6 list-items">
+								
+								<div class="pwp-img">
+									<a itemprop="url" t-att-href="'/downloads/download/%s' % slug(download)">
+										<img class="img img-responsive" itemprop="image" t-att-alt="download.name" t-att-src="website.image_url(download, 'image', '200x200')"/>
+									</a>
+								</div>	
+								<div class="pwp-info" style="margin-top:15px;">
+									<p class="pwpi-title">
+										<a itemprop="name" t-att-href="'/downloads/download/%s' % slug(download)" t-field="download.name"/>
+									</p>								
+								</div>
+							</div>
+						</t>
+					</t>
+				</div>			  
+		      </div>
+			  <div class="row"><div class="col-md-3 col-sm-4 hidden-xs"></div><div class="col-md-9 col-sm-8"><t t-call="website.pager"/></div></div>
+		   </div>						   
+      </div>
+  </t>
+</template>
+
+<template id="download_tmpl">
+  <t t-call="website.layout">
+      <div id="wrap">
+          <div class="oe_structure oe_empty">
+		  			  
+              <div class="container mb16">
+				<t t-call="nomitang_download.download_search"/>
+				
+				<div class="col-md-3 col-sm-4 hidden-xs">
+					<t t-call="nomitang_download.download_left_col"/>			  
+				</div>
+				
+				<div id="kingfisher_pro_products_grid_view"  class="col-md-9 col-sm-8">					
+					<div class="row" style="margin-left:10%"> <img class="img img-responsive" itemprop="image" t-att-alt="main_object.name" t-att-src="website.image_url(main_object, 'image', '300x300')"/> </div>
+					<div class="row" style="margin-left:10%"><h3 t-field="main_object.name"></h3></div>
+					<div class="row" style="margin-left:10%"><a id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product" t-att-href="'http://54.249.24.71:8069/nomitang_download/static/download/%s' % main_object.link">Download</a></div>
+                </div>				
+				
+              </div>
+			  
+			  <div  class="mb16"> 
+				<hr/>
+			  </div>
+          </div>
+      </div>
+  </t>
+</template>
+
+
+</data>
+</openerp>

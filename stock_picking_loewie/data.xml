@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="loewie_description_1" model="loewie.description">
+            <field name="name">Close To Expiry</field>
+        </record>
+		
+    </data>
+</openerp>		

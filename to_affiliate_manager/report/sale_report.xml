@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="to_affiliate_sale_report_inherit_search" model="ir.ui.view">
+			<field name="name">to.affiliate.sale.report.inherit.search</field>
+			<field name="model">sale.report</field>
+			<field name="inherit_id" ref="sale.view_order_product_search" />
+			<field name="arch" type="xml">
+				<field name="date" position="after">
+					<field name="to_affiliate_id" groups="to_affiliate_manager.group_to_affiliate_user" />
+				</field>
+				<xpath expr="//filter[@name='User']" position="after">
+					<filter string="Affiliate" domain="[]"
+						context="{'group_by':'to_affiliate_id'}" groups="to_affiliate_manager.group_to_affiliate_user" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<menuitem id="menu_to_affiliate" name="Affiliate" sequence="21"
+			groups="to_affiliate_manager.group_to_affiliate_user" />
+		<menuitem id="menu_to_affiliate_config" name="Configuration"
+			parent="menu_to_affiliate" sequence="20" />
+		<menuitem id="menu_to_affiliate_report" name="Reports"
+			parent="menu_to_affiliate" sequence="10" />
+
+		<!-- Affiliate Advertisement -->
+
+		<record id="to_affiliate_advertisement_view" model="ir.ui.view">
+			<field name="name">to.affiliate.advertisement.tree</field>
+			<field name="model">to.affiliate.advertisement</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="TO Affiliate Advertisement">
+					<field name="name" />
+					<field name="url" />
+					<field name="alternative_txt" />
+					<field name="active" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="to_affiliate_advertisement_form_view" model="ir.ui.view">
+			<field name="name">to.affiliate.advertisement.form</field>
+			<field name="model">to.affiliate.advertisement</field>
+			<field name="arch" type="xml">
+				<form string="Affiliate Advertisement">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="url" />
+								<field name="alternative_txt" />
+							</group>
+							<group>
+								<field name="active" />
+								<field name="image" />
+							</group>
+							<field name="html" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="to_affiliate_advertisement_search" model="ir.ui.view">
+			<field name="name">to.affiliate.advertisement.search</field>
+			<field name="model">to.affiliate.advertisement</field>
+			<field name="arch" type="xml">
+				<search string="Affiliate Advertisement">
+					<field name="name" />
+					<field name="alternative_txt" />
+					<!-- group expand="1" string="Group By">
+						<filter string="Company" name="group_company_id"
+							context="{'group_by':'company_id'}" />
+						<filter string="Saleperson" name="group_saleperson_id"
+							context="{'group_by':'saleperson_id'}" />
+						<filter string="Website" name="group_website_id"
+							context="{'group_by':'website_id'}" />
+					</group -->
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_affiliate_advertisement_tree_view">
+			<field name="name">Affiliate Advertisements</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.advertisement</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem id="to_affiliate_advertisement_menu" parent="menu_to_affiliate_config"
+			action="action_to_affiliate_advertisement_tree_view" sequence="1" />
+
+		<!-- Affiliate Codes -->
+
+		<record id="to_affiliate_code_view" model="ir.ui.view">
+			<field name="name">to.affiliate.code.tree</field>
+			<field name="model">to.affiliate.code</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="TO Affiliate Codes">
+					<field name="name" />
+					<field name="partner_id" />
+					<field name="saleperson_id" />
+					<field name="website_id" />
+					<field name="description" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="to_affiliate_code_form_view" model="ir.ui.view">
+			<field name="name">to.affiliate.code.form</field>
+			<field name="model">to.affiliate.code</field>
+			<field name="arch" type="xml">
+				<form string="Affiliate Codes">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="url" />
+								<field name="website_id" />
+							</group>
+							<group>
+								<field name="partner_id" />
+								<field name="saleperson_id" />
+								<field name="company_id" groups="base.group_multi_company" />
+							</group>
+						</group>
+						<label for="description" />
+						<field name="description" />
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="to_affiliate_code_search" model="ir.ui.view">
+			<field name="name">to.affiliate.code.search</field>
+			<field name="model">to.affiliate.code</field>
+			<field name="arch" type="xml">
+				<search string="Affiliate Code">
+					<field name="name" />
+					<field name="partner_id" />
+					<group expand="1" string="Group By">
+						<filter string="Company" name="group_company_id"
+							context="{'group_by':'company_id'}" />
+						<filter string="Saleperson" name="group_saleperson_id"
+							context="{'group_by':'saleperson_id'}" />
+						<filter string="Website" name="group_website_id"
+							context="{'group_by':'website_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_affiliate_code_tree_view">
+			<field name="name">Affiliate Codes</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.code</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem id="to_affiliate_code_menu" parent="menu_to_affiliate_config"
+			action="action_to_affiliate_code_tree_view" sequence="1" />			
+			
+		<!-- Affiliate Commission Rule -->
+
+		<record id="to_affiliate_commission_rule_view" model="ir.ui.view">
+			<field name="name">to.affiliate.commission.rule.tree</field>
+			<field name="model">to.affiliate.commission.rule</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="TO Affiliate Commission Rule">
+					<field name="name" />
+					<field name="company_id" />
+					<field name="type" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="to_affiliate_commission_rule_form_view" model="ir.ui.view">
+			<field name="name">to.affiliate.commission.rule.form</field>
+			<field name="model">to.affiliate.commission.rule</field>
+			<field name="arch" type="xml">
+				<form string="Affiliate Commission Rule">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" />								
+							</group>
+							<group>
+								<field name="company_id" />
+								<!-- 
+								<field name="type" />
+								<field name="product_category_ids" widget="many2many_tags"
+									attrs="{'invisible': [('type','!=','category')], 'required': [('type','=','category')]}" />
+								<field name="comm_percent"
+									attrs="{'invisible': [('type','not in', ('all', 'category'))], 'required': [('type','in', ('all', 'category'))]}" />
+								 -->
+							</group>
+						</group>
+						<notebook>
+							<page string="Commission Details">
+								<field name="line_ids" nolabel="1">
+									<tree string="Commission Details" editable="bottom">
+										<field name="product_id"/>
+										<field name="comm_percent"/>
+									</tree>
+								</field>							
+							</page>
+							<page string="Description">
+								<field name="description" nolabel="1" />
+							</page>
+						</notebook>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_to_affiliate_commission_rule">
+			<field name="name">Commission Rules</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.commission.rule</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem id="to_affiliate_commission_rule_menu" parent="menu_to_affiliate_config"
+			action="action_to_affiliate_commission_rule" sequence="2" />
+
+		<!-- Affiliate Commission -->
+
+		<menuitem id="menu_to_affiliate_main" parent="menu_to_affiliate"
+			name="Affiliate" sequence="1" />
+
+		<record id="to_affiliate_com_view" model="ir.ui.view">
+			<field name="name">to.affiliate.commission.tree</field>
+			<field name="model">to.affiliate.commission</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Affiliate Commission" create="0"
+					colors="blue:state == 'draft';black:state == 'com_paid';grey:state in ('cancel')">
+					<field name="name" />
+					<field name="user_id" />
+					<field name="date" />
+					<field name="com_amount" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="to_affiliate_com_form_view" model="ir.ui.view">
+			<field name="name">to.affiliate.commission.form</field>
+			<field name="model">to.affiliate.commission</field>
+			<field name="arch" type="xml">
+				<form string="Affiliate Commission" create="0">
+					<header>
+						<button name="action_confirm" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_manager" states="draft"
+							string="Confirm" class="oe_highlight" />
+						<button name="action_cancel" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_manager" states="confirm"
+							string="Cancel" />
+						<button name="action_draft" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_user" states="cancel"
+							string="Set to Draft" class="oe_highlight" />
+						<field name="state" readonly="1" statusbar_visible="draft,confirm,submit,com_paid"
+							widget="statusbar" />
+					</header>
+					<sheet>
+						<group>
+							<group>
+								<field name="name" />
+								<field name="user_id" />
+							</group>
+							<group>
+								<field name="date" />
+								<field name="order_id" />
+								<field name="currency_id" groups="base.group_multi_currency" />								
+								<field name="com_amount" widget="monetary"
+									options="{'currency_field': 'currency_id'}" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Commission Details">
+								<field name="line_ids" nolabel="1">
+									<tree string="Commission Details" editable="bottom" create="0">
+										<field name="product_id"/>
+										<field name="total" sum="Total"/>
+										<field name="comm_percent"/>
+										<field name="comm_amount"/>
+									</tree>
+								</field>
+							</page>
+							<page string="Customer Invoices">
+								<field name="customer_invoice_ids" nolabel="1" />
+							</page>
+						</notebook>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_affiliate_com_tree_view">
+			<field name="name">Affiliate Commissions</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.commission</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+		</record>
+
+		<menuitem id="menu_to_affiliate_com" parent="menu_to_affiliate_main"
+			action="action_to_affiliate_com_tree_view" name="Commission"
+			sequence="1" />
+
+		<!-- Affiliate Payment -->
+
+		<menuitem id="menu_to_affiliate_billing_main" parent="menu_to_affiliate"
+			name="Commission Payment" sequence="2" />
+
+		<record id="to_affiliate_payment_view" model="ir.ui.view">
+			<field name="name">to.affiliate.payment.tree</field>
+			<field name="model">to.affiliate.payment</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Affiliate Commission Payments"
+					colors="blue:state == 'draft';black:state == 'paid';grey:state in ('cancel')">
+					<field name="name" />
+					<field name="user_id" />
+					<field name="date" />
+					<field name="total" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="to_affiliate_payment_form_view" model="ir.ui.view">
+			<field name="name">to.affiliate.payment.form</field>
+			<field name="model">to.affiliate.payment</field>
+			<field name="arch" type="xml">
+				<form string="Affiliate Payment">
+					<header>
+						<button name="action_confirm" type="object" states="draft"
+							string="Submit" class="oe_highlight" />
+						<button name="action_compute" type="object" states="draft"
+							string="Compute Commission" />
+						<button name="action_approve" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_user" states="confirm"
+							string="Approve" class="oe_highlight" />
+						<button name="action_view_invoice" string="View Invoice"
+							type="object" class="oe_highlight"
+							attrs="{'invisible': [('invoice_exists', '=', False)]}" />
+						<button name="action_cancel" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_user" states="draft,confirm,approve"
+							string="Reject" />
+						<button name="action_draft" type="object"
+							groups="to_affiliate_manager.group_to_affiliate_user" states="cancel"
+							string="Set to Draft" class="oe_highlight" />
+						<field name="state" readonly="1" statusbar_visible="draft,confirm,approve,paid"
+							widget="statusbar" />
+					</header>
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								<label string="Commission Payment " />
+								<field name="name" class="oe_inline" readonly="1" />
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="user_id" />
+								<field name="reference" />
+								<field name="invoice_exists" invisible="1" />
+							</group>
+							<group>
+								<field name="date" />
+								<field name="currency_id" groups="base.group_multi_currency" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Commissions">
+								<field name="com_ids" nolabel="1">
+									<tree>
+										<field name="name" />
+										<field name="date" />
+										<field name="com_amount" />
+										<field name="state" invisible="1" />
+									</tree>
+								</field>
+								<group class="oe_subtotal_footer oe_right">
+									<field name="total" class="oe_subtotal_footer_separator"
+										widget="monetary" options="{'currency_field': 'currency_id'}" />
+								</group>
+								<div class="oe_clear">
+									<label for="notes" />
+								</div>
+								<field name="notes" class="oe_inline" placeholder="Additional notes..." />
+							</page>
+						</notebook>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_aff_payment_request_tree_view">
+			<field name="name">Payment Requests</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="domain">[('state','=','draft')]</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_aff_payment_approved_tree_view">
+			<field name="name">Requests to Approve</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="domain">[('state','in',('confirm','approve'))]</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_to_aff_payment_paid_tree_view">
+			<field name="name">Paid Requests</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="domain">[('state','=','paid')]</field>
+		</record>
+
+		<menuitem id="menu_to_aff_payment_request" parent="menu_to_affiliate_billing_main"
+			action="action_to_aff_payment_request_tree_view" sequence="1" />
+		<menuitem id="menu_to_aff_payment_approved" parent="menu_to_affiliate_billing_main"
+			action="action_to_aff_payment_approved_tree_view" sequence="2" />
+		<menuitem id="menu_to_aff_payment_paid" parent="menu_to_affiliate_billing_main"
+			action="action_to_aff_payment_paid_tree_view" sequence="3" />
+
+		<!-- Portal -->
+
+		<menuitem name="Affiliate" id="to_portal_affiiate" parent="portal.portal_menu"
+			sequence="21" />
+
+		<record id="action_to_affiliate_com_portal" model="ir.actions.act_window">
+			<field name="name">Commissions</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">to.affiliate.commission</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help">We haven't sent you any commission.</field>
+		</record>
+
+		<menuitem id="to_portal_affiliate_commission" parent="to_portal_affiiate"
+			action="action_to_affiliate_com_portal" sequence="2"
+			groups="group_to_affiliate_portal" />
+
+		<menuitem id="menu_to_aff_payment_request_portal" groups="group_to_affiliate_portal"
+			parent="to_portal_affiiate" action="action_to_aff_payment_request_tree_view"
+			sequence="3" />
+		<menuitem id="menu_to_aff_payment_approved_portal" groups="group_to_affiliate_portal"
+			parent="to_portal_affiiate" action="action_to_aff_payment_approved_tree_view"
+			sequence="4" />
+		<menuitem id="menu_to_aff_payment_paid_portal" groups="group_to_affiliate_portal"
+			parent="to_portal_affiiate" action="action_to_aff_payment_paid_tree_view"
+			sequence="5" />
+
+	</data>
+</openerp>

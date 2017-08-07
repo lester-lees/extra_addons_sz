@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="to_report_affiliate_referrer_analysis_graph" model="ir.ui.view">
+			<field name="name">to.report.affiliate.referrer.analysis.graph</field>
+			<field name="model">to.report.affiliate.referrer.analysis</field>
+			<field name="arch" type="xml">
+				<graph string="Affiliate Referrer Analysis" type="pivot">
+					<field name="affiliate_id" type="row" />
+					<field name="datetime" interval="month" type="col" />
+					<field name="number_so" type="measure" />
+					<field name="amount_so" type="measure" />
+				</graph>
+			</field>
+		</record>
+
+		<record id="to_report_affiliate_referrer_analysis_search" model="ir.ui.view">
+			<field name="name">to.report.affiliate.referrer.analysis.search</field>
+			<field name="model">to.report.affiliate.referrer.analysis</field>
+			<field name="arch" type="xml">
+				<search string="Affiliate Referrer Analysis">
+					<field name="affcode_id" />
+					<field name="affiliate_id" />
+					<field name="referrer" />
+					<group expand="1" string="Group By">
+						<filter string="Affiliate Code" name="group_affcode_id"
+							context="{'group_by':'affcode_id'}" />
+						<filter string="Referrer" name="group_referrer" context="{'group_by':'referrer'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_to_report_affiliate_referrer_analysis" model="ir.actions.act_window">
+			<field name="name">Affiliate Referrer Analysis</field>
+			<field name="res_model">to.report.affiliate.referrer.analysis</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">pivot,graph</field>
+			<field name="search_view_id" ref="to_report_affiliate_referrer_analysis_search" />
+			<field name="context">{'group_by_no_leaf':1, 'group_by':[]}</field>
+		</record>
+
+		<menuitem action="action_to_report_affiliate_referrer_analysis" id="menu_to_report_affiliate_referrer_analysis"
+			parent="menu_to_affiliate_report" sequence="1"
+			groups="group_to_affiliate_manager" />
+
+	</data>
+</openerp>

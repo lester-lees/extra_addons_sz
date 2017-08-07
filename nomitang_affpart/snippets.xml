@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="nt_thanks_website_view" name="Thanks Website View">
+	<meta http-equiv="refresh" content="6;url=/shop"/>
+		<t t-name="website.thanks">
+		  <t t-call="website.layout">
+			<div id="wrap" class="oe_structure oe_empty">
+			  <section class="s_title mt64" style="height: 128px; overflow: hidden;">
+				<div class="container">
+				  <div class="row">
+					<div class="col-md-12 mb0">
+					  <h1 class="text-center">Thanks for your Order !</h1>
+					  <h3 class="text-muted text-center">5 seconds later will redirect to Shop page.</h3>
+					  <img t-att-src="url" width="1" height="1"/>
+					</div>
+				  </div>
+				</div>
+			  </section>
+			</div>
+		  </t>
+		</t>
+    </template>
+</data>
+</openerp>

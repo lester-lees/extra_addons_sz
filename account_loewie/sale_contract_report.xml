@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="view_sale_contract_report">
+			<t  t-call="report.html_container">
+				<style type="text/css"> .header { font-size: 8px;  } </style>
+				<div class="header">
+					<div class="row">
+						<div class="col-xs-3"> 
+							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;max-width=150px;align=left"/>
+						</div>
+					   <h5 t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" />
+					</div>
+					<div style="border-bottom: 1px solid black;"/>
+				</div>
+
+					<div class="page">
+						<!--	<h4 style="text-align:center;">深圳市乐易保健用品有限公司</h4>
+							<h4 style="text-align:center;">深圳市南山区创业路中兴工业城综合楼801</h4>
+							<h4 style="text-align:center;">电话(0755)22676055 传真(0755)22676055</h4> -->
+						<h3 style="text-align:center;"> 购销合同  </h3><br/>
+						<t t-set="partner" t-value="docs[0].partner_id"/>
+						
+						<table>
+						<tr><td width="10%">       </td><td width="75%"/>	<td>NO:<span t-esc="datetime.datetime.now().date()"/></td>	</tr>	
+						<tr><td width="10%">       </td><td width="75%"/>	<td>日期:<span t-esc="datetime.datetime.now().date()"/></td>	</tr>
+						
+						<tr><td width="10%">甲方：</td><td width="75%"><span t-esc="partner.name"/></td>	<td/>	</tr>
+						<tr><td width="10%">乙方：</td><td width="75%">深圳市乐易保健用品有限公司 (0755-22676055)</td>	<td></td>	</tr>
+
+						</table><br/>
+                        <h5>一、产品名称、型号规格、单价： </h5>
+						<t t-set="total" t-value="0"/>
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th width="5%"><strong>序号</strong></th>
+									<th width="35%"><strong>产品名称</strong></th>
+									<th width="20%"><strong>中文名称</strong></th>									
+									<th width="10%"><strong>单位</strong></th>
+									<th width="10%"><strong>数量</strong></th>									
+									<th width="10%"><strong>单价</strong></th>
+									<th width="10%"><strong>金额</strong></th>								
+								</tr>
+							</thead>
+						  <tbody>	
+                                <t t-set="lines" t-value="group_salelines_by_brand(docs)"/>	
+								<t t-set="index_" t-value="1"/>
+								<t t-foreach="sorted(lines.keys())" t-as="key">
+									<tr>
+										<td><span t-esc="index_"/></td>
+										<td><span t-esc="lines[key]['product_name']"/></td>
+										<td><span t-esc="lines[key]['name_cn']"/></td>										
+										<td><span t-esc="lines[key]['unit']"/></td>
+										<td><span t-esc="lines[key]['qty']"/></td>										
+										<td><span t-esc="lines[key]['price']"/></td>
+										<td><span t-esc="lines[key]['qty'] * lines[key]['price']"/></td>	
+										<t t-set="index_" t-value="index_ + 1"/>
+										<t t-set="total" t-value="lines[key]['qty'] * lines[key]['price'] + total"/>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+						<div class="row">
+							<div class="col-xs-6 pull-right">
+								<table class="table table-condensed">
+									<tr class="border-black">
+										<td width="40%"><strong>合计(CNY):</strong></td>
+										<td class="text-right"><span t-esc="total"/></td>
+									</tr>
+								</table>
+							</div>
+						</div>	
+						
+						<h5>二、支付方式：电汇深圳市乐易保健用品有限公司 交行深圳蛇口支行 443066106018160024043</h5>	
+						<h5>三、合同一式两份，双方各执一份，双方签字盖章后生效</h5>	<br/><br/>
+						<table>
+						<tr><td width="10%">甲方：</td><td width="50%"><span t-esc="partner.name"/>(盖章)	</td>	<td width="10%">乙方：</td><td width="30%">深圳市乐易保健用品有限公司(盖章)</td></tr>
+						<tr><td width="10%">电话：</td><td width="50%">	<span t-esc="partner.phone"/></td>	<td width="10%">电话：</td><td width="30%">0755-22676055</td></tr>						
+						</table>						
+					</div>
+            </t>
+        </template>
+
+		<report 
+		string="购销合同PDF" 
+		id="action_sale_contract_report" 
+		model="sale.order" 
+		report_type="qweb-pdf"
+		name="account_loewie.view_sale_contract_report" 
+		file="account_loewie.view_sale_contract_report"/>
+		
+	</data>
+</openerp>

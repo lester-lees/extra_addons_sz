@@ -1,0 +1,1087 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* to_affiliate_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-30 06:10+0000\n"
+"PO-Revision-Date: 2016-07-30 06:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:39
+#, python-format
+msgid "\n"
+"                In order to get started with the code <code>%s</code>, \n"
+"                just copy the URL <code>%s/?%s=%s</code> and share it with your friends and partners. \n"
+"                You can put the URL on your social network like Facebook, LinkedIn \n"
+"                or put it on webpages where you can to get more and more customers.\n"
+"            "
+msgstr "\n"
+"                Để bắt đầu sử dụng mã <code>%s</code>, \n"
+"                chỉ cần sao chép URL <code>%s/?%s=%s</code> và chia sẻ nó với bạn bè và đối tác của bạn. \n"
+"                Bạn cũng có thể đặt URL này lên các trang mạng xã hội hay bất kỳ trang web nào mà bạn có thể để tăng lượng khách hàng tiềm năng. \n"
+"            "
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:290
+#: code:addons/to_affiliate_manager/models/affiliate.py:367
+#, python-format
+msgid " Your Unpaid Commission so far is %s while the minimum payout is %s. You need to make additional %s before you can request for commission payment"
+msgstr "Khoản hoa hồng chưa thanh toán của bạn cho đến giờ là %s trong khi khoản tối thiểu để chúng tôi thanh toán là %s. Bạn cần kiếm thêm %s trước khi bạn có thể yêu cầu thanh toán hoa hồng."
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_number_so
+msgid "# Sales Orders"
+msgstr "Số lượng Đơn hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "(seconds)"
+msgstr "(giây)"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid ",\n"
+"											just copy the URL"
+msgstr ",\n"
+"											chỉ cần copy URL"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "Accounting"
+msgstr "Kế toán"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_needaction
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_needaction
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_needaction
+msgid "Action Needed"
+msgstr "Cần có hành động"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Additional notes..."
+msgstr "Ghi chú bổ sung..."
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_sale_order_to_affcode_id
+msgid "AffCode"
+msgstr "AffCode"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_partner_to_is_affiliate
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_sale_report_to_affiliate_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_user_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_user_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_affiliate_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_is_affiliate
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate_main
+#: model:ir.ui.menu,name:to_affiliate_manager.to_portal_affiiate
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_sale_report_inherit_search
+msgid "Affiliate"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_aff_allowed
+msgid "Affiliate Allowed"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/wizard/affiliate_join.py:50
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_partner_to_affcode_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_affcode_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_affcode_id
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_search
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_partner_inherit_search
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_register_menu
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_report_affiliate_referrer_analysis_search
+#, python-format
+msgid "Affiliate Code"
+msgstr "Mã Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_affiliate_code_tree_view
+#: model:ir.ui.menu,name:to_affiliate_manager.to_affiliate_code_menu
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_form_view
+msgid "Affiliate Codes"
+msgstr "Mã Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_view
+#: model:product.product,name:to_affiliate_manager.to_product_product_aff_commission
+#: model:product.template,name:to_affiliate_manager.to_product_product_aff_commission_product_template
+msgid "Affiliate Commission"
+msgstr "Hoa hồng Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_view
+msgid "Affiliate Commission Payments"
+msgstr "Thanh toán Hoa hồng Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_to_affiliate_comm_percent
+msgid "Affiliate Commission Percentage"
+msgstr "Phần trăm hoa hồng Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_commission_rule_form_view
+msgid "Affiliate Commission Rule"
+msgstr "Quy tắc hoa hồng Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_affiliate_com_tree_view
+msgid "Affiliate Commissions"
+msgstr "Hoa hồng Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_to_affiliate_cookie_age
+msgid "Affiliate Cookie Lifetime"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "Affiliate Management"
+msgstr "Quản lý Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.module.category,name:to_affiliate_manager.module_category_to_affiliate
+msgid "Affiliate Manager"
+msgstr "Quản lý  Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Affiliate Payment"
+msgstr "Thanh toán Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_pricelist_inherit_search
+msgid "Affiliate Pricelist"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_report_affiliate_referrer_analysis
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_report_affiliate_referrer_analysis
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_report_affiliate_referrer_analysis_graph
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_report_affiliate_referrer_analysis_search
+msgid "Affiliate Referrer Analysis"
+msgstr "Phân tích Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_user_id
+msgid "Affiliate User"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission.rule,type:0
+msgid "All Products"
+msgstr "Tất cả sản phẩm"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_amount_so
+msgid "Amount"
+msgstr "Tổng tiền"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "Apply"
+msgstr "Áp dụng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_type
+msgid "Apply for"
+msgstr "Áp dụng cho"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Approve"
+msgstr "Duyệt"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.payment,state:0
+msgid "Approved"
+msgstr "Đã duyệt"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_browser
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_browser
+msgid "Browser"
+msgstr "Trình duyệt"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission,state:0
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_name
+msgid "Code"
+msgstr "Mã"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_commission_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_com_ids
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate_com
+msgid "Commission"
+msgstr "Hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_com_amount
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_comm_amount
+msgid "Commission Amount"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_ids
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_commission_rule_form_view
+msgid "Commission Details"
+msgstr "Chi tiết Hoa hồng"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission,state:0
+msgid "Commission Paid"
+msgstr "Hoa hồng đã đã thanh toán"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_account_invoice_to_aff_payment_id
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate_billing_main
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Commission Payment"
+msgstr "Thanh toán Hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_comm_percent
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_comm_percent
+msgid "Commission Percentage"
+msgstr "Phần trăm hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_comm_percent
+msgid "Commission Percentage (%)"
+msgstr "Hoa hồng (%)"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_to_com_product_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_com_product_id
+msgid "Commission Product"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_rule_id
+msgid "Commission Rule"
+msgstr "Quy tắc hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_affiliate_commission_rule
+#: model:ir.ui.menu,name:to_affiliate_manager.to_affiliate_commission_rule_menu
+msgid "Commission Rules"
+msgstr "Quy tắc hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_total
+msgid "Commission Total"
+msgstr "Tổng hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_affiliate_com_portal
+#: model:ir.ui.menu,name:to_affiliate_manager.to_portal_affiliate_commission
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Commissions"
+msgstr "Hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_res_company
+msgid "Companies"
+msgstr "Công ty"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_company_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_company_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_company_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_company_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_company_id
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_search
+msgid "Company"
+msgstr "Công ty"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Compute Commission"
+msgstr "Tính hoa hồng"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate_config
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_affiliate_configuration
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "Configure Affiliate"
+msgstr "Cấu hình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission,state:0
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.payment,state:0
+msgid "Confirmed by Affiliate"
+msgstr "Được xác nhận bởi Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_cookie_age
+msgid "Cookie Life"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_create_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_create_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_currency_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_customer_invoice_ids
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+msgid "Customer Invoices"
+msgstr "Hóa đơn khách hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_date
+msgid "Date"
+msgstr "Ngày tháng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_message_last_post
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_message_last_post
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Ngày của thông điệp gần nhất được ghi nhận trên một bản ghi"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_datetime
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_datetime
+msgid "Datetime"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_to_affcode_company
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_affcode_company
+msgid "Default Affiliate Company"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_comm_percent
+msgid "Default Commission Percentage"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_description
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_description
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_commission_rule_form_view
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_display_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission,state:0
+#: selection:to.affiliate.payment,state:0
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_res_company_aff_allowed
+msgid "Enable this option will allow clients to select this company when joining affiliate program"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/res_company.py:31
+#, python-format
+msgid "Error!"
+msgstr "Lỗi!"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_follower_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_follower_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_follower_ids
+msgid "Followers"
+msgstr "Người dõi theo"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_channel_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_channel_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Người theo dõi (Các kênh)"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_partner_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_partner_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Các đối tác)"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+msgid "General"
+msgstr "Tổng quát"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_search
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_report_affiliate_referrer_analysis_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: to_affiliate_manager
+#: model:ir.module.category,description:to_affiliate_manager.module_category_to_affiliate
+msgid "Helps you manage your affiliate by affiliate code, calculate commissions of affiliates."
+msgstr "Giúp bạn quản lý affiliate theo affiliate code, tính toán hoa hồng cho affiliate."
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_id
+msgid "ID"
+msgstr "ID"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_ip
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_ip
+msgid "IP Address"
+msgstr "Địa chỉ IP"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_message_unread
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_message_unread
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_message_unread
+msgid "If checked new messages require your attention."
+msgstr "Nếu đánh dấu kiểm, các thông điệp mới yêu cầu sự có mặt của bạn."
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_message_needaction
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_message_needaction
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu được đánh dấu, thông điệp mới sẽ yêu cầu sự có mặt của bạn."
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "In order to get started with the code"
+msgstr "Để bắt đầu với mã"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_account_invoice
+msgid "Invoice"
+msgstr "Hoá đơn"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_invoice_exists
+msgid "Invoiced"
+msgstr "Đã xuất hoá đơn"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_invoice_ids
+msgid "Invoices"
+msgstr "Các hoá đơn"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_product_pricelist_to_is_affiliate_pricelist
+msgid "Is Affiliate Pricelist?"
+msgstr "Là Bảng giá cho Affiliate?"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_is_follower
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_is_follower
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_is_follower
+msgid "Is Follower"
+msgstr "Trở thành người theo dõi"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "Join"
+msgstr "Tham gia"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_register_menu
+msgid "Join Affiliate"
+msgstr "Tham gia Chương trình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_wizard_affiliate_join
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_wizard_affiliate_join
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "Join Affiliate Program"
+msgstr "Tham gia Chương trình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "Join Our Affiliate Program"
+msgstr "Tham gia Chương trình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "Join our affiliate program!"
+msgstr "Tham gia Chương trình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_last_post
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_last_post
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_last_post
+msgid "Last Message Date"
+msgstr "Ngày thông điệp cuối cùng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis___last_update
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join___last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_write_uid
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_write_date
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_wizard_affiliate_join_write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối"
+
+#. module: to_affiliate_manager
+#: model:res.groups,name:to_affiliate_manager.group_to_affiliate_manager
+msgid "Manager"
+msgstr "Quản lý"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_ids
+msgid "Messages"
+msgstr "Thông điệp"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_res_company_to_affiliate_payout
+msgid "Minimum Commission Payout"
+msgstr "Hoa hồng tối thiểu để thanh toán"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_config_settings_payout
+msgid "Minimum Payout"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_name
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_name
+msgid "Name"
+msgstr "Tên"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_notes
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_needaction_counter
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_needaction_counter
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số lượng hành động"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_message_needaction_counter
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_message_needaction_counter
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Số các thông điêọp cần có hành động"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_message_unread_counter
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_message_unread_counter
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Số các thông điệp chưa đọc"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.payment,state:0
+msgid "Paid"
+msgstr "Đã thanh toán"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_aff_payment_paid_tree_view
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_paid
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_paid_portal
+msgid "Paid Requests"
+msgstr "Yêu cầu đã thanh toán"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_res_partner
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_date
+msgid "Payment Date"
+msgstr "Ngày thanh toán"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_aff_payment_request_tree_view
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_request
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_request_portal
+msgid "Payment Requests"
+msgstr "Đề nghị thanh toán"
+
+#. module: to_affiliate_manager
+#: model:res.groups,name:to_affiliate_manager.group_to_affiliate_portal
+msgid "Portal"
+msgstr "Affiliate Portal"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "Preferred Seller"
+msgstr "Chọn Nhà bán hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_product_pricelist
+msgid "Pricelist"
+msgstr "Bảng giá"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_product_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_line_product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_product_category_ids
+#: selection:to.affiliate.commission.rule,type:0
+msgid "Product Categories"
+msgstr "Nhóm sản phẩm"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission.rule,type:0
+msgid "Product Templates"
+msgstr "Mẫu Sản phẩm"
+
+#. module: to_affiliate_manager
+#: sql_constraint:to.affiliate.commission.rule.line:0
+msgid "Product must be unique per company!"
+msgstr "Sản phẩm phải là duy nhất trên mỗi công ty!"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission.rule,type:0
+msgid "Products"
+msgstr "Sản phẩm"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_reference
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_sale_order_to_referrer_analysis_id
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_report_affiliate_referrer_analysis_referrer
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_report_affiliate_referrer_analysis_search
+msgid "Referrer"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.payment,state:0
+msgid "Rejected"
+msgstr "Bị Bác bỏ"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_report_affiliate_referrer_analysis
+msgid "Report Affiliate Referrer Analysis"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_affiliate_report
+msgid "Reports"
+msgstr "Báo cáo"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,name:to_affiliate_manager.action_to_aff_payment_approved_tree_view
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_approved
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_to_aff_payment_approved_portal
+msgid "Requests to Approve"
+msgstr "Yêu cầu chờ duyệt"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_name
+msgid "Rule Name"
+msgstr "Tên quy tắc"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_saleperson_id
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_search
+msgid "Saleperson"
+msgstr "Nhân viên Bán hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_sale_order
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_order_id
+msgid "Sales Order"
+msgstr "Đơn đặt hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_sale_report
+msgid "Sales Orders Statistics"
+msgstr "Thống kê đơn hàng"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "Select a Company"
+msgstr "Chọn một Công ty"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Set to Draft"
+msgstr "Thiết lập thành dự thảo"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.menu,name:to_affiliate_manager.menu_affiliate_configuration
+msgid "Settings"
+msgstr "Thiết lập"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_referrer_analysis_referrer
+msgid "Source"
+msgstr "Nguồn"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_state
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_state
+msgid "Status"
+msgstr "Tình trạng"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "Submit"
+msgstr "Trình"
+
+#. module: to_affiliate_manager
+#: selection:to.affiliate.commission,state:0
+msgid "Submitted Request"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_code
+msgid "TO Affiliate Code"
+msgstr "Mã Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_view
+msgid "TO Affiliate Codes"
+msgstr "Mã Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_commission
+msgid "TO Affiliate Commission"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_commission_line
+msgid "TO Affiliate Commission Line"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_commission_rule
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_commission_rule_view
+msgid "TO Affiliate Commission Rule"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_commission_rule_line
+msgid "TO Affiliate Commission Rule Line"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_payment
+msgid "TO Affiliate Payment"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_referrer_analysis
+msgid "TO Affiliate Referrer Analytic"
+msgstr "Phân tích Affiliate Referrer"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_code_saleperson_id
+msgid "The internal user that is in charge of communicating with this contact if any."
+msgstr ""
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:66
+#, python-format
+msgid "The partner you've selected does not link to any user. Please link the partner to a user before proceeding further"
+msgstr "Đối tác bạn chọn không liên kết đến một người dùng. Vui lòng tạo người dùng liên kết đến đối tác trước khi tiếp tục."
+
+#. module: to_affiliate_manager
+#: sql_constraint:to.affiliate.code:0
+msgid "The selected partner have already an affiliate code!"
+msgstr "Đối tác được chọn đã có mã affiliate rồi!"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_res_company_to_com_product_id
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_config_settings_com_product_id
+msgid "The standard Odoo product object for accounting integration purpose"
+msgstr "Chọn sản phẩm để hạch toán chi phí hoa hồng cho mục đích tích hợp với kế toán để hạch toán tự động chi phí hoa hồng cho affiliate."
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/res_company.py:31
+#, python-format
+msgid "There is no default company for the current user!"
+msgstr "Chưa thiết lập công ty mặc định cho người dùng hiện tại!"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_line_total
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_com_form_view
+msgid "Total"
+msgstr "Tổng"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_url
+msgid "URL"
+msgstr "URL"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_unread
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_unread
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_unread
+msgid "Unread Messages"
+msgstr "Thông điệp chưa đọc"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_message_unread_counter
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_message_unread_counter
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Bộ đếm thông điệp chưa đọc"
+
+#. module: to_affiliate_manager
+#: model:res.groups,name:to_affiliate_manager.group_to_affiliate_user
+msgid "User"
+msgstr "Người sử dụng"
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:66
+#: code:addons/to_affiliate_manager/models/affiliate.py:219
+#: code:addons/to_affiliate_manager/models/affiliate.py:288
+#: code:addons/to_affiliate_manager/models/affiliate.py:290
+#: code:addons/to_affiliate_manager/models/affiliate.py:299
+#: code:addons/to_affiliate_manager/models/affiliate.py:367
+#: code:addons/to_affiliate_manager/models/affiliate.py:376
+#, python-format
+msgid "User Error!"
+msgstr "Lỗi Người dùng!"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "View Affiliate Code"
+msgstr "Xem mã Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_payment_form_view
+msgid "View Invoice"
+msgstr "Xem hóa đơn"
+
+#. module: to_affiliate_manager
+#: model:ir.actions.act_window,help:to_affiliate_manager.action_to_affiliate_com_portal
+msgid "We haven't sent you any commission."
+msgstr "Chúng tôi vẫn chưa gửi tiền hoa hồng cho bạn."
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_code_website_id
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate_code_search
+msgid "Website"
+msgstr "Trang web"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_rule_website_message_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_commission_website_message_ids
+#: model:ir.model.fields,field_description:to_affiliate_manager.field_to_affiliate_payment_website_message_ids
+msgid "Website Messages"
+msgstr "Thông điệp Website"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_rule_website_message_ids
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_commission_website_message_ids
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_payment_website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử thông tin liên lạc website"
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "Welcome to Affiliate Program"
+msgstr "Chào mừng đến với Chương trình Affiliate"
+
+#. module: to_affiliate_manager
+#: model:ir.model.fields,help:to_affiliate_manager.field_to_affiliate_config_settings_affcode_company
+msgid "When a user joins the affiliate program without selecting a seller company (in multi-company environment), the company selected here will be chosen."
+msgstr "When a user joins the affiliate program without selecting a seller company (in multi-company environment), the company selected here will be chosen."
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:299
+#, python-format
+msgid "You  must config Commision Product before approve payment."
+msgstr "Bạn phải cấu hình sản phẩm để ghi nhận hoa hồng trước khi có thể phê duyệt thanh toán."
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:288
+#, python-format
+msgid "You can not submit a payment which has no commission."
+msgstr "Bạn không thể trình một đề nghị thanh toán mà không có hoa hồng."
+
+#. module: to_affiliate_manager
+#: code:addons/to_affiliate_manager/models/affiliate.py:219
+#: code:addons/to_affiliate_manager/models/affiliate.py:376
+#, python-format
+msgid "You can only delete records whose state is draft."
+msgstr "Bạn chỉ có thể xóa các bản ghi có trạng thái dự thảo."
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "You have already join affiliate program."
+msgstr "Bạn đã gia nhập chương trình affiliate rồi."
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.to_affiliate
+msgid "and share it with your friends and partners.\n"
+"											You can put the\n"
+"											URL on your social network like Facebook,\n"
+"											LinkedIn\n"
+"											or put it on\n"
+"											webpages where you can to get more and more\n"
+"											customers."
+msgstr "và chia sẻ với bạn bè và đối tác của bạn.\n"
+"											Bạn cũng có thể mang URL này lên đặt ở các trang mạng xã hội như Facebook, LinkedIn, v.v. hay bất kỳ trang web nào có thể để thu hút thêm khách hàng tiềm năng và tăng doanh số.\n"
+""
+
+#. module: to_affiliate_manager
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_affiliate_configuration
+#: model:ir.ui.view,arch_db:to_affiliate_manager.view_to_wizard_affiliate_join
+msgid "or"
+msgstr "hoặc"
+
+#. module: to_affiliate_manager
+#: model:res.groups,comment:to_affiliate_manager.group_to_affiliate_user
+msgid "the user will have access to all records of affiliate in the affiliate manager application."
+msgstr "người dùng sẽ có quyền truy cập đến tất cả các records of affiliate trong ứng dụng quản lý affiliate."
+
+#. module: to_affiliate_manager
+#: model:res.groups,comment:to_affiliate_manager.group_to_affiliate_manager
+msgid "the user will have an access to the affiliate configuration as well as statistic reports."
+msgstr "Người dùng sẽ có quyền truy cập đến khu vực cấu hình affiliate cũng như xem các báo cáo phân tích."
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_affiliate_config_settings
+msgid "to.affiliate.config.settings"
+msgstr ""
+
+#. module: to_affiliate_manager
+#: model:ir.model,name:to_affiliate_manager.model_to_wizard_affiliate_join
+msgid "to.wizard.affiliate.join"
+msgstr ""
+

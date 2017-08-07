@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<record id="view_to_wizard_affiliate_join" model="ir.ui.view">
+            <field name="name">Join Affiliate Program</field>
+            <field name="model">to.wizard.affiliate.join</field>
+            <field name="arch" type="xml">
+                <form string="Join Affiliate Program">
+                    <p class="oe_gray" attrs="{'invisible': [('is_affiliate', '=', False)]}">
+                        You have already join affiliate program.
+                    </p>
+                    <p class="oe_gray" attrs="{'invisible': [('is_affiliate', '=', True)]}">
+                        Join our affiliate program!
+                    </p>
+                    <group>
+                        <field name="company_id" attrs="{'invisible': [('is_affiliate','=',True)]}"/>
+                        <field name="user_id" invisible="1"/>
+                        <field name="is_affiliate" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="open_table" string="Join" type="object" class="oe_highlight"
+                        	attrs="{'invisible': [('is_affiliate', '=', True)]}" />
+                       	<button name="open_table" string="View Affiliate Code" type="object" class="oe_highlight"
+                        	attrs="{'invisible': [('is_affiliate', '=', False)]}" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_to_wizard_affiliate_join" model="ir.actions.act_window">
+            <field name="name">Join Affiliate Program</field>
+            <field name="res_model">to.wizard.affiliate.join</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_to_wizard_affiliate_join"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="menu_to_wizard_affiliate_join" action="action_to_wizard_affiliate_join"
+        	parent="to_portal_affiiate" sequence="1"/>
+    
+    </data>
+</openerp>

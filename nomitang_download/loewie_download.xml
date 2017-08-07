@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="download_category_view_tree" model="ir.ui.view">
+            <field name="name">download.category.view.tree</field>
+            <field name="model">download.category</field>
+            <field name="arch" type="xml">
+                <tree string="download category">
+                    <field name="id"/>				
+                    <field name="sequence"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="child_id"/>					
+                </tree>
+            </field>
+        </record>		
+        <record id="download_category_action" model="ir.actions.act_window">
+            <field name="name">download category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">download.category</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="download_category_view_tree"/>
+        </record>
+
+		
+        <record id="loewie_download_view_form" model="ir.ui.view">
+            <field name="name">loewie.download.view.form</field>
+            <field name="model">loewie.download</field>
+            <field name="arch" type="xml">
+                <form string="Loewie Download">
+				 <group>
+                    <group>
+						<field name="id"/>				
+						<field name="sequence"/>
+						<field name="create_date"/>
+						<field name="name"/>
+					</group>
+                    <group>					
+						<field name="image" widget="image" class="oe_avatar"/>	
+						<field name="category_parent_id"/>						
+						<field name="category_id" domain="[('parent_id','=',category_parent_id)]"/>
+						<field name="link"/>						
+					</group>	
+				 </group>					
+                </form>
+            </field>
+        </record>			
+        <record id="loewie_download_view_tree" model="ir.ui.view">
+            <field name="name">loewie.download.view.tree</field>
+            <field name="model">loewie.download</field>
+            <field name="arch" type="xml">
+                <tree string="Loewie Download">
+                    <field name="id"/>				
+                    <field name="sequence"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>		
+        <record id="loewie_download_action" model="ir.actions.act_window">
+            <field name="name">Loewie Download</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loewie.download</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="loewie_download_view_tree"/>
+        </record>
+		
+         <!-- Top menu item -->
+        <menuitem name="Download" id="download_main_menu" sequence="16"/>
+        <menuitem name="Category" id="download_category_menu" parent="download_main_menu" sequence="20" action="download_category_action"/>
+        <menuitem name="Download" id="download_download_menu" parent="download_main_menu" sequence="30" action="loewie_download_action"/>		
+    </data>
+</openerp>

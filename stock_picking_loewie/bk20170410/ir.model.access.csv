@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loewie_tackle_stock_user,loewie_tackle,model_loewie_tackle,stock.group_stock_user,1,1,1,1
+access_loewie_desc_stock_user,loewie_desc,model_loewie_description,stock.group_stock_user,1,1,1,1

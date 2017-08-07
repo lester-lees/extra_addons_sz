@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<template id="report_so_pre_picklist">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<div class="oe_structure"/>
+					<table class="dest_address" style="table-layout:fixed; width: 100%">
+						<tr>
+							<td width="80%">
+								<strong  t-field="o.partner_id.name"></strong><br/>
+								<t t-if="o.partner_id.child_ids"><strong t-field="o.partner_id.child_ids[0].name"/><br/></t>
+								<t t-if="o.partner_id.street"><strong t-field="o.partner_id.street"/><br/></t>
+								<t t-if="o.partner_id.phone"><strong t-field="o.partner_id.phone"/><br/></t>
+							</td>
+						</tr>
+						<tr><td><span t-field="o.date_order"/></td>	</tr>
+					</table>
+					 <div><span t-field="o.note"/></div>
+					 <h3>Pre-Picklist - <b>预先备货单</b> : <span t-field="o.partner_id.ref">-</span><span t-field="o.name"/><t t-if="o.client_order_ref">-<span t-field="o.client_order_ref"/></t></h3>				
+					<br/>
+										
+					<t t-set="total" t-value="0"/>		
+					<t t-foreach="group_lines(o).items()" t-as="brand">	
+						<table class="table-condensed" width="100%">
+							<thead>
+								<tr>
+									<th width="5%">Pos</th>
+									<th class="text-center" width="40%">Product Name</th>
+									<th class="text-center" width="40%">Description</th>									
+									<th class="text-center" width="10%">EAN13</th>
+									<th width="5%" class="text-right">Quantity</th>
+								</tr>
+							</thead>
+							<t t-foreach="brand[1]['lines']" t-as="line">
+								<tr>
+									<td><t t-esc="line['id'] or ' '"/></td>
+									<td class="text-center"><t t-esc="line['product_name'] or ' '"/></td>
+									<td class="text-center"><t t-esc="line['description'] or ' '"/></td>
+									<td class="text-center"><t t-esc="line['internal_reference'] or ' '"/></td>									
+									<td class="text-right"><t t-esc="int(line['qty']) or ' '"/></td>
+								</tr>
+								<t t-set="total" t-value="total + line['qty']"/>
+							</t>					
+						</table>											
+					</t>
+
+					<!-- final total -->		
+					<br/>
+					<strong>Total: <t t-esc="int(total)"/></strong><br/><strong>制单人：<span t-field="o.create_uid"/></strong>					
+				</div>			
+			</t>
+		</template>
+
+	<template id="report_pre_picklist">
+		<t t-call="report.html_container">
+			<t t-foreach="doc_ids" t-as="doc_id">
+				<t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'stock_picking_loewie.report_so_pre_picklist')"/>
+			</t>
+		</t>
+	</template>
+        <report 
+            id="report_so_picklist_act"
+            string="Pre-Picking list"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="stock_picking_loewie.report_pre_picklist" 
+            name="stock_picking_loewie.report_pre_picklist"             
+        />
+    </data>
+</openerp>

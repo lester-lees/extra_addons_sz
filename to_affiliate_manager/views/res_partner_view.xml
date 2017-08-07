@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<record id="to_affiliate_partner_inherit_search" model="ir.ui.view">
+			<field name="name">to.affiliate.partner.inherit.search</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_res_partner_filter" />
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="to_affcode_id" groups="base.group_sale_salesman" />
+				</field>
+				<xpath expr="//filter[@name='salesperson']" position="after">
+					<filter string="Affiliate Code" domain="[]" context="{'group_by':'to_affcode_id'}"
+						groups="base.group_sale_salesman" />
+				</xpath>
+			</field>
+		</record>
+    
+    </data>
+</openerp>

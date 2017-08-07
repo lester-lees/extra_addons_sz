@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model='ir.ui.view' id='res_partner_formview_loewie'>
+			<field name='name'>res.partner.form.loewie</field>
+			<field name='model'>res.partner</field>
+			<field name='inherit_id' ref='base.view_partner_form'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//sheet/group/group/field[@name='website']" position="after">
+					<field name="payment_type"/>
+				</xpath> 				
+			</field>
+		</record>		
+
+        <record id="action_sale_picking_transfer" model="ir.actions.act_window">
+            <field name="name">Done Transfers</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain"></field>
+            <field name="context">{
+                    'search_default_picking_type_id': [active_id],
+                    'default_picking_type_id': active_id,
+                    'contact_display': 'partner_address',
+                    'search_default_done': 1,
+            }
+            </field>
+            <field name="search_view_id" ref="stock.view_picking_internal_search"/>
+        </record>
+		
+        <menuitem id="menu_action_sale_stock1" icon="STOCK_JUSTIFY_FILL"
+            action="action_sale_picking_transfer"
+            parent="account.menu_finance_receivables"
+            name="Invoiced"			
+            sequence="12"/>
+			
+        <menuitem id="menu_action_sale_stock2" icon="STOCK_JUSTIFY_FILL"
+            action="action_sale_picking_transfer"
+            parent="account.menu_finance_receivables" 
+            name="To Be Invoiced"			
+            sequence="13"/>			
+	
+		<record model='ir.ui.view' id='journal_invoice_treeview_loewie'>
+			<field name='name'>account.invoice.tree.loewie</field>
+			<field name='model'>account.invoice</field>
+			<field name='inherit_id' ref='account.invoice_tree'/>
+			<field name='arch' type='xml'>
+                <field name="origin" position="after">
+                    <field name="sale_id"/>
+                    <field name="picking_id"/>
+                </field>  <!--
+                <field name="currency_id" position="replace">
+					<field name="currency_id" groups="base.group_multi_currency" invisible="1"/>
+                </field>  	
+                <field name="company_id" position="replace">
+					<field name="company_id" groups="base.group_multi_company" widget="selection" invisible="1"/>
+                </field> 				-->
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='journal_invoice_formview_loewie'>
+			<field name='name'>account.invoice.form.loewie</field>
+			<field name='model'>account.invoice</field>
+			<field name='inherit_id' ref='account.invoice_form'/>
+			<field name='arch' type='xml'>
+                <field name="fiscal_position" position="after">
+                    <field name="sale_id"/>
+                    <field name="picking_id"/>
+					<button name="back_write_picks_ref_invoice" string="back_write_picks_ref_invoice" type="object"/>
+                </field>  				
+			</field>
+		</record>		
+
+        <!-- purchase  -->
+        <record id="view_purchase_order_form_inherit2" model="ir.ui.view">
+            <field name="name">purchase.order.inherit2</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_subtotal']" position='after'>
+                    <field name="subtotal_untaxed" />
+                </xpath>
+            </field>
+        </record> 
+
+        <!-- sale  we don't need these in sz-erp, but just in hk-erp   -->
+        <record id="view_order_form_inherit2" model="ir.ui.view">
+            <field name="name">sale.order.inherit2</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Sales Order Lines']/group/group/div[@name='discount']" position='after'>
+                    <field name="price_discounted"/>
+                </xpath>
+                <field name="partner_shipping_id" position="after">
+                    <field name="payment_type"/>
+                    <field name="partner_comment"/>					
+                </field> 							
+            </field>
+        </record>		
+        <record id="view_order_tree_inherit2" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherit2</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="sales_team"/>
+                </field> 				
+            </field>
+        </record>	
+
+        <record id="view_vpicktree_sale_id" model="ir.ui.view">
+            <field name="name">stock.picking.sale_id.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="sale_id"/>
+					<field name="sales_person"/>
+                </field> 		
+				<field name="backorder_id" position="after">
+                    <field name="ref_invoice"/>
+                </field>				
+            </field>
+        </record>		
+		
+		<record id="view_picking_form_sale_id" model="ir.ui.view">
+            <field name="name">stock.picking.form_.sale_id</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="//sheet/group/group/field[@name='partner_id']" position="after"> 
+					<field name="sale_id"/>
+				</xpath>
+           </field>
+        </record>
+			
+         <record id="view_picking_search_salesperson_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.salesperson.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+					<field name="sale_id"/>
+                    <field name="sales_person"/>
+                </xpath>
+            </field>
+        </record>			
+	</data>
+</openerp>

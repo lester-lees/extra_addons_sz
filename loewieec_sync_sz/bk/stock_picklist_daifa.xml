@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="stock_picking_daifa">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="stock_picking_loewie.external_layout_stock">
+                        <div class="page">
+							<t t-if="o.picking_type_id.code != 'incoming'"><h3>Picking List : <span t-field="o.name"/> </h3></t>
+							<t t-if="o.picking_type_id.code == 'incoming'"><h3>Goods Received Note(GRN) : <span t-field="o.name"/> </h3></t>
+							<t t-if="o.sale_id"><h4>Invoice: <span t-field="o.partner_id.ref"/><t t-if="not o.partner_id.ref"><span t-field="o.partner_id.parent_id.ref"/></t>-<span t-field="o.sale_id.name"/></h4></t>						
+						
+							<table  class="dest_address" style="table-layout:fixed; width: 100%">			
+								<tr><td width="12%"><strong>Date: </strong></td><td><span t-field="o.date"/></td></tr>	
+								<tr><td width="12%"><strong>Company: </strong></td><td><span t-field="o.partner_id"/></td></tr>
+								<tr t-if="o.note"><td width="12%"><strong>Note:</strong></td><td><span t-field="o.note"/></td></tr>
+							</table>						
+
+								<t t-set="p_qty" t-value="0"/>		
+								<t t-set="p_reserved" t-value="0"/>
+								<t t-if="o.move_lines">	
+									<p align='center'><strong>拣货表</strong></p>
+									<t t-set="line_id" t-value="1"/>
+									<table class="table table-condensed">
+									  <thead>
+										<tr>
+											<th width="10%"><strong>Pos</strong></th>						
+											<th width="40%"><strong>产品名</strong></th>
+											<th width="30%"><strong>描述</strong></th>
+											<th width="10%"><strong>Ean13</strong></th>												
+											<th width="10%" class="text-right"><strong>数量</strong></th>
+
+										</tr>
+									  </thead>
+									  <tbody>
+										<t t-set="brands" t-value="group_lines_by_brand(o)"/>
+										<t t-foreach="brands.values()" t-as="brand"> 
+											<tr t-foreach="brand.values()" t-as="product">
+												<td width="10%"><t t-esc="line_id"/></td>		
+												<td width="40%"><span t-esc="product['product']"/></td>
+												<td width="30%"><span t-esc="product['desc']"/></td>
+												<td width="10%"><span t-esc="product['ean13']"/></td>
+												<td width="10%" class="text-right"><span t-esc="product['qty']"/></td>
+												<t t-set="line_id" t-value="line_id + 1"/>													
+											</tr>										
+										</t>
+									  </tbody>
+									</table><br/>
+									<p align='center'><strong>发货表</strong></p>
+									<t t-foreach="group_lines_by_express(o).items()" t-as="express">	
+										<table class="table table-condensed">
+										  <thead>
+											<tr>
+												<th width="5%"><strong>Pos</strong></th>						
+												<th width="40%"><strong>产品名</strong></th>
+												<th width="20%"><strong>描述</strong></th>
+												<th width="10%"><strong>Ean13</strong></th>												
+												<th width="10%"><strong>源库位</strong></th>
+												<th width="10%"><strong>目标库位</strong></th>
+												<th width="5%" class="text-right"><strong>数量</strong></th>
+											</tr>
+										  </thead>
+										  <tbody>	
+											<tr t-foreach="express[1]['lines']" t-as="pack_operation">
+												<td width="5%"><t t-esc="pack_operation['id']"/></td>			
+												<t t-set="p_qty" t-value="p_qty + pack_operation['qty']"/>
+												<t t-set="p_reserved" t-value="p_reserved + pack_operation['availability']"/>
+												
+												<td width="40%"><span t-esc="pack_operation['product_name']"/></td>
+												<td width="20%"><span t-esc="pack_operation['description']"/></td>
+												<td width="10%"><span t-esc="pack_operation['internal_reference']"/></td>
+												<td width="10%"><span t-esc="pack_operation['loc_src']"/></td>
+												<td width="10%"><span t-esc="pack_operation['loc_dest']"/></td>
+												<td width="5%" class="text-right"><span t-esc="int(pack_operation['qty'])"/></td>
+
+											</tr>
+										  </tbody>
+										</table>
+										<span t-esc="express[1]['consignee_info']"/><br/>
+									</t>
+								</t>						
+							<strong>Qty Total: <t t-esc="int(p_qty)"/></strong><br/>
+							<strong>Reserved Total: <t t-esc="int(p_reserved)"/></strong><br/>
+							<strong>制单人：<t t-if="o.sale_id"><span t-field="o.sale_id.user_id"/></t><t t-if="not o.sale_id"><span t-field="o.create_uid"/></t></strong>
+                        </div>
+                    </t>
+                 </t>
+             </t>
+        </template>
+
+		<report 
+		string="拣货单-代发" 
+		id="action_picking_daifa" 
+		model="stock.picking" 
+		report_type="qweb-pdf"
+		name="loewieec_sync_sz.stock_picking_daifa" 
+		file="loewieec_sync_sz.stock_picking_daifa"/>
+		
+	</data>
+</openerp>
